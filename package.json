@@ -1,7 +1,7 @@
 {
   "name": "worlgoapp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Worlgo HK Website Node.js App",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./index.js",
