@@ -82,10 +82,8 @@ const port = process.env.PORT || "8000";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
-app.use(express.static(path.join(__dirname, "public")));
-// Use the built-in express middleware for serving static files from './public'
-app.use('https://storage.cloud.google.com/worlgohk.appspot.com/public/', express.static('public'));
-
+//app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join("https://storage.cloud.google.com/worlgohk.appspot.com/", "public")));
 /**
  * Routes Definitions
  */
