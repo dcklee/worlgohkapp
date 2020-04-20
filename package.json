@@ -18,6 +18,25 @@
   "dependencies": {
     "ckeditor4": "^4.13.1",
     "express": "^4.17.1",
-    "pug": "^2.0.4"
+    "pug": "^2.0.4",
+    "@google-cloud/storage": "^4.0.0"
+  },
+  "cloud-repo-tools": {
+    "requiresProjectId": true,
+    "requiresKeyFile": true,
+    "test": {
+      "app": {
+        "requiredEnvVars": [
+          "GCLOUD_STORAGE_BUCKET"
+        ],
+        "msg": "<input type=\"file\" name=\"file\">",
+        "substitutions": "YOUR_BUCKET_NAME=$GCLOUD_STORAGE_BUCKET"
+      },
+      "build": {
+        "requiredEnvVars": [
+          "GCLOUD_STORAGE_BUCKET"
+        ]
+      }
+    }
   }
 }
