@@ -130,6 +130,9 @@ app.get("/visa-details", (req, res) => {
 app.get("/visa-details-01", (req, res) => {
   res.render("visa-details-01", {title: "Visa Details 01" });
 });
+app.get("/visa-details-02", (req, res) => {
+  res.render("visa-details-02", {title: "Visa Details 02" });
+});
 app.get("/visa-list-1", (req, res) => {
   res.render("visa-list-1", {title: "Visa List" });
 });
