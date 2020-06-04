@@ -45,14 +45,16 @@ $(document).ready(function() {
         $.ajax({
             type: "POST",
             data: dataString,
-            url: "php/contactForm.php",
+            url: "/send",
             cache: false,
-            success: function (d) {
+            success: function (data, status, xhr) {
                 $(".form-control").removeClass("success");
-                    if(d == 'success') // Message Sent? Show the 'Thank You' message and hide the form
-                        $('.loading').fadeIn('slow').html('<font color="#48af4b">Mail sent Successfully.</font>').delay(3000).fadeOut('slow');
-                         else
-                        $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
+                    // if(response.val == 'success') // Message Sent? Show the 'Thank You' message and hide the form
+                        $('.loading').fadeIn('slow').html('<font color="#00596e">Mail sent Successfully.</font>').delay(3000).fadeOut('slow');
+                         //else
+                        },
+            error: function (jqXhr, textStatus, errorMessage) {            
+                         $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
                                 }
         });
         return false;
