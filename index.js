@@ -182,3 +182,30 @@ app.post("/send", (req, res) =>{
   });
  //res.json({data: 'success', message: message})
 });
+
+app.post("/contact", (req, res) =>{
+  
+  var transport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: {
+        user: "info@worlgo.com",
+        pass: "Worlgo2020!"
+    }
+  });
+
+  var message = {
+    from: req.body.email, // Sender address
+    to: 'info@worlgo.com',         // List of recipients
+    subject: "Client Enquiry " + req.body.name, //website client enquiry
+    html: "<b> "+ req.body.name +" " + req.body.email + " "+ req.body.subject +" " + req.body.msg + " </b>", // Client Details
+  };
+  console.log(message);
+  transport.sendMail(message, function(err, info) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(info);
+    }
+  });
+});

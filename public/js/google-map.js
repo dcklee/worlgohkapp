@@ -1,5 +1,5 @@
 function initMap() {
-	var myLatLng = {lat: -37.817214, lng: 144.955925};
+	var myLatLng = {lat: 22.2908944, lng: 114.1979274};
     var map = new google.maps.Map(document.getElementById('gmap'), {
       	center: myLatLng,
       	zoom: 17,
@@ -120,7 +120,7 @@ function initMap() {
 			position: myLatLng,
 		map: map,
 		icon: image,
-		title: 'Hello World!'
+		title: 'Worlgo 移民服務'
 		});
 	marker.setMap(map);
  }

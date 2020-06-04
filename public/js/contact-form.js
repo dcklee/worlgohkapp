@@ -40,12 +40,16 @@ $(document).ready(function() {
             msg.closest(".form-control").removeClass("error").addClass("success");
             flag = true;
         }
-        var dataString = "name=" + name.val() + "&email=" + email.val() + "&subject=" + subject.val() + "&msg=" + msg.val();
+        //var dataString = "name=" + name.val() + "&email=" + email.val() + "&subject=" + subject.val() + "&msg=" + msg.val();
+        var name_1 = name.val();
+        var email_1 = email.val();
+        var subject_1 = subject.val();
+        var msg_1 = msg.val()
         $(".loading").fadeIn("slow").html("Loading...");
         $.ajax({
             type: "POST",
-            data: dataString,
-            url: "/send",
+            data: {name: name_1, email: email_1, subject: subject_1, msg: msg_1},
+            url: "/contact",
             cache: false,
             success: function (data, status, xhr) {
                 $(".form-control").removeClass("success");
