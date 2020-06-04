@@ -33,7 +33,7 @@ $(document).ready(function() {
             flag = true;
         }
         var dataString = "name=" + name.val() + "&email=" + email.val() + "&visa=" + visa.val();
-        $(".loading").fadeIn("slow").html("Loading...");
+        $(".loading").fadeIn("slow").html("LoadinG...");
         $.ajax({
             type: "POST",
             data: dataString,

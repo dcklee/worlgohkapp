@@ -6,6 +6,7 @@
 
 const express = require("express");
 const path = require("path");
+const nodemailer = require('nodemailer');
 
 /**
  * App Variables
@@ -147,4 +148,39 @@ app.get("/user", (req, res) => {
 
 app.listen(port, () => {
   console.log(`Listening to requests on http://localhost:${port}`);
+});
+
+app.use(express.urlencoded({
+  extended: false
+}));
+app.use(express.json());
+
+app.post("/send", (req, res) =>{
+  console.log("test")
+  var transport = nodemailer.createTransport({
+    service: "gmail",
+    host: "smtp.gmail.com",
+    auth: {
+        user: "info@worlgo.com",
+        pass: "Worlgo2020!"
+    }
+  });
+
+  var message = {
+    from: req.query.email, // Sender address
+    to: 'info@worlgo.com',         // List of recipients
+    name: req.query.name, // Client Name
+    phone: req.query.phone, // Phone
+    visa: req.query.visa, //visa type
+    country: req.query.country //country
+  };
+  console.log(message);
+  transport.sendMail(message, function(err, info) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(info);
+    }
+  });
+ res.json({data: 'success', message: message})
 });

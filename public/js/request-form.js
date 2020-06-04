@@ -2,7 +2,6 @@
 $(document).ready(function() {
 
     "use strict";
-
     $(".request-form").submit(function(e) {
         e.preventDefault();        
         var name = $(".name");
@@ -48,20 +47,39 @@ $(document).ready(function() {
             country.closest(".form-control").removeClass("error").addClass("success");
             flag = true;
         }
-        var dataString = "name=" + name.val() + "&email=" + email.val() + "&phone=" + phone.val() + "&visa=" + visa.val() + "&country=" + country.val();
-        $(".loading").fadeIn("slow").html("Loading...");
+        // var dataString = "name=" + name.val() + "&email=" + email.val() + "&phone=" + phone.val() + "&visa=" + visa.val() + "&country=" + country.val();
+        var name=name.val();
+        var email=email.val();
+        var phone=phone.val();
+        var visa=visa.val()
+        var country=country.val()
+        $(".loading").fadeIn("slow").html("LoadinG...");
+        //     $("#send_email").click(function(){     
+
+        //         //$("#message").text("Sending E-mail...Please wait");
+        //         $.get("http://localhost:8000/send",{name:name,email:email,phone:phone,visa:visa,country:country},function(data){
+        //         if(data=="sent")
+        //         {
+        //             $("#message").empty().html("Email is been sent. Thank you!");
+        //         }
+        
+        // });
+        //     });
         $.ajax({
             type: "POST",
-            data: dataString,
-            url: "php/requestForm.php",
+            data: {name: name, email: email, phone: phone, visa: visa, country: country},
+            url: "/send",
             cache: false,
-            success: function (d) {
+            dataType: 'json',
+            success: function (data, status, xhr) {
                 $(".form-control").removeClass("success");
-                    if(d == 'success') // Message Sent? Show the 'Thank You' message and hide the form
+                    // if(response.val == 'success') // Message Sent? Show the 'Thank You' message and hide the form
                         $('.loading').fadeIn('slow').html('<font color="#00596e">Mail sent Successfully.</font>').delay(3000).fadeOut('slow');
-                         else
-                        $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
-                                }
+                         //else
+                        },
+            error: function (jqXhr, textStatus, errorMessage) {            
+                         $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
+                                }         
         });
         return false;
     });

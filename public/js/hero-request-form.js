@@ -41,20 +41,41 @@ $(document).ready(function() {
             flag = true;
         }
         var dataString = "name=" + name.val() + "&email=" + email.val() + "&phone=" + phone.val() + "&visa=" + visa.val();
-        $(".loading").fadeIn("slow").html("Loading...");
-        $.ajax({
-            type: "POST",
-            data: dataString,
-            url: "php/heroRequestForm.php",
-            cache: false,
-            success: function (d) {
-                $(".form-control").removeClass("success");
-                    if(d == 'success') // Message Sent? Show the 'Thank You' message and hide the form
-                        $('.loading').fadeIn('slow').html('<font color="#18a0ae">Mail sent Successfully.</font>').delay(3000).fadeOut('slow');
-                         else
-                        $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
-                                }
+        $(".loading").fadeIn("slow").html("LoadinG...");
+        let transport = nodemailer.createTransport({
+            host: 'smtp.mailtrap.io',
+            port: 2525,
+            auth: {
+               user: 'put_your_username_here',
+               pass: 'put_your_password_here'
+            }
         });
+        let message = {
+            from: email.val(), // Sender address
+            to: 'info@worlgo.com',         // List of recipients
+            subject: visa.val(), // Subject line
+            phone: phone.val() // Plain text body
+        };
+        transport.sendMail(message, function(err, info) {
+            if (err) {
+              console.log(err)
+            } else {
+              console.log(info);
+            }
+        });
+        // $.ajax({
+        //     type: "POST",
+        //     data: dataString,
+        //     url: "php/heroRequestForm.php",
+        //     cache: false,
+        //     success: function (d) {
+        //         $(".form-control").removeClass("success");
+        //             if(d == 'success') // Message Sent? Show the 'Thank You' message and hide the form
+        //                 $('.loading').fadeIn('slow').html('<font color="#18a0ae">Mail sent Successfully.</font>').delay(3000).fadeOut('slow');
+        //                  else
+        //                 $('.loading').fadeIn('slow').html('<font color="#ff5607">Mail not sent.</font>').delay(3000).fadeOut('slow');
+        //                         }
+        // });
         return false;
     });
     $("#reset").on('click', function() {
