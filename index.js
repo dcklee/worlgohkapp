@@ -156,7 +156,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 
 app.post("/send", (req, res) =>{
-  console.log("test")
+  
   var transport = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
@@ -167,12 +167,10 @@ app.post("/send", (req, res) =>{
   });
 
   var message = {
-    from: req.query.email, // Sender address
+    from: req.body.email, // Sender address
     to: 'info@worlgo.com',         // List of recipients
-    name: req.query.name, // Client Name
-    phone: req.query.phone, // Phone
-    visa: req.query.visa, //visa type
-    country: req.query.country //country
+    subject: "Client Enquiry " + req.body.name, //website client enquiry
+    html: "<b> "+ req.body.name +" " + req.body.phone + " "+ req.body.visa +" " + req.body.country + " </b>", // Client Details
   };
   console.log(message);
   transport.sendMail(message, function(err, info) {
@@ -182,5 +180,5 @@ app.post("/send", (req, res) =>{
       console.log(info);
     }
   });
- res.json({data: 'success', message: message})
+ //res.json({data: 'success', message: message})
 });

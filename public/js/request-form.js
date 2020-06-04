@@ -53,7 +53,7 @@ $(document).ready(function() {
         var phone=phone.val();
         var visa=visa.val()
         var country=country.val()
-        $(".loading").fadeIn("slow").html("LoadinG...");
+        $(".loading").fadeIn("slow").html("Loading...");
         //     $("#send_email").click(function(){     
 
         //         //$("#message").text("Sending E-mail...Please wait");
