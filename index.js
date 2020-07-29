@@ -7,7 +7,7 @@
 const express = require("express");
 const path = require("path");
 const nodemailer = require('nodemailer');
-
+const i18n = require("i18n");
 /**
  * App Variables
  */
@@ -136,6 +136,9 @@ app.get("/visa-details-02", (req, res) => {
 });
 app.get("/visa-list-1", (req, res) => {
   res.render("visa-list-1", {title: "Visa List" });
+});
+app.get("/privacy", (req, res) => {
+  res.render("privacy", {title: "Privacy Policy" });
 });
 
 app.get("/user", (req, res) => {
