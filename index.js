@@ -171,7 +171,7 @@ app.post("/send", (req, res) =>{
     host: "smtp.gmail.com",
     auth: {
         user: "info@worlgo.com",
-        pass: "Worlgo2020!"
+        pass: ""
     }
   });
 
@@ -199,7 +199,7 @@ app.post("/contact", (req, res) =>{
     host: "smtp.gmail.com",
     auth: {
         user: "info@worlgo.com",
-        pass: "Worlgo2020!"
+        pass: ""
     }
   });
 
