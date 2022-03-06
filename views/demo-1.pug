@@ -6,6 +6,36 @@ html(lang='en')
     //-       selector: '#wsmwnutxt'
     //-     });
     body
+     script.
+      (function () {
+      var options = {
+      whatsapp: "+85259370631", // WhatsApp number
+      telegram: "+85259370631", // Telegram bot username
+      email: "info@worlgo.com", // Email
+      call: "+85252224769", // Call phone number
+      company_logo_url: "//storage.getbutton.io/widget/4d/4d5f/4d5fa1b3e791721c32a055223749fd64/logo.jpg", // URL of company logo (png, jpg, gif)
+      greeting_message: "你好，要省更多保險費，請致電我們。", // Text of greeting message
+      call_to_action: "致電我們", // Call to action
+      button_color: "#FF6550", // Color of button
+      position: "right", // Position may be 'right' or 'left'
+      order: "whatsapp,telegram,call,email", // Order of buttons
+      pre_filled_message: "General", // WhatsApp pre-filled message
+      ga: true, // Google Analytics enabled
+      branding: false, // Show branding string
+      mobile: true, // Mobile version enabled
+      desktop: true, // Desktop version enabled
+      greeting: true, // Greeting message enabled
+      shift_vertical: 100, // Vertical position, px
+      shift_horizontal: 0, // Horizontal position, px
+      domain: "worlgo.com", // site domain
+      key: "CqDBJN49QHyl3Ekye-O78g", // pro-widget key
+      };
+      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+      })();
+    <!-- /GetButton.io widget -->
       //  Global site tag (gtag.js) - Google Analytics
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-158216926-1")
     script.
@@ -92,7 +122,7 @@ html(lang='en')
                 .header-info.clearfix
                   span.txt-400
                     i.fas.fa-map-marker-alt
-                    | FLT C/Level 14, Max Share Centre, No. 373 King's Rd, Northpoint, HK
+                    | 銅鑼灣蜆殼街9-23號 秀明中心 (Seabright Plaza) 8樓8A室 
               //  Contacts 
               .headertopright.header-contacts
                 a.callusbtn.txt-400(href='tel:+852 5222 4769')
@@ -259,7 +289,7 @@ html(lang='en')
               //  End Image Caption 
             //  END SLIDE #1 
             //  SLIDE #2 
-            li#slide-2
+            li#slide-3
               //  Background Image 
               img(src='images/slider/dlee.jpg' alt='注冊移民顧問')
               //  Image Caption 
@@ -285,7 +315,7 @@ html(lang='en')
               //  End Image Caption 
             //  END SLIDE #2 
             //  SLIDE #3 
-            li#slide-3
+            li#slide-2
               //  Background Image 
               img(src='images/slider/seminar.jpg' alt='免費香港講座')
               //  Image Caption 
@@ -295,16 +325,16 @@ html(lang='en')
                     .col-md-12
                       .caption-txt.white-color
                         //  Title 
-                        h5.h5-xl Worlgo Migration 移民服務
-                        h2 Secure your family's future.
+                        h5.h5-xl 海外留學生醫療保險 OSHC
+                        h2 想慳保險費？我哋幫你打折！
                         //  Text  
                         p.p-md.
-                          完成您的移民要求
+                          最高可以慳你2000澳幣！
                           
                         //  Button 
-                        a.btn.btn-md.btn-primary.tra-white-hover.btn-arrow(href='https://damienlee1.zohobookings.com/#/customer/worlgotechnologylimited')
+                        a.btn.btn-md.btn-primary.tra-white-hover.btn-arrow(href='OSHC')
                           span
-                            | 咨詢我們持牌顧問
+                            | 即刻報價!
                             i.fas.fa-arrow-right
                   //  End row 
                 //  End container 
@@ -335,7 +365,7 @@ html(lang='en')
                   //  Text 
                   .sbox-4-txt
                     h5.h5-md 澳洲188B 250萬投資簽證
-                    p 投資移民2021年7月重啓。如果擔心資產是否符合，請立即聯係我們持牌顧問。
+                    p 投資移民2021年7月重啓。如果擔心資產是否符合，請聯係我!們持牌顧問。
             //  SERVICE BOX #2 
             .col-md-6.col-lg-4
               .sbox-4.icon-sm
@@ -346,7 +376,7 @@ html(lang='en')
                   //  Text 
                   .sbox-4-txt
                     h5.h5-md 澳洲讀書移民計劃-香港組別
-                    p 讀兩年書然後輕鬆獲取澳洲PR永久身份的最新澳洲移民計劃。
+                    p 讀兩年書然後輕鬆申請及獲取澳洲PR永久身份的最新澳洲移民計劃。
             //  SERVICE BOX #3 
             .col-md-6.col-lg-4
               .sbox-4.icon-sm
@@ -416,20 +446,20 @@ html(lang='en')
                 //  Section ID 
                 span.section-id.noto-font-700.id-color Worlgo 移民服務的最常問問題
                 //  Title 
-                h3.h3-lg 移民的話需要考英語IELTS雅思嗎?
+                h3.h3-lg 移民的話需要考英語試IELTS、PTE、OET嗎?
                 //  INFO BOX #1 
                 .box-list
                   .box-list-icon
                     i.fas.fa-genderless
                   p.
-                    基本上所有海外簽證及移民方案會要求英語水平IELTS雅思成績。
+                    基本上所有海外簽證及移民方案會要求英語水平IELTS、PTE、OET成績。
                     
                 //  INFO BOX #2 
                 .box-list
                   .box-list-icon
                     i.fas.fa-genderless
                   p.
-                   但是每個項目的雅思IELTS都不一樣，甚至可以豁免雅思IELTS要求。
+                   但是每個項目的IELTS都不一樣，甚至可以豁免IELTS要求。
                     
                 //  INFO BOX #3 
                 .box-list
@@ -584,7 +614,7 @@ html(lang='en')
                         h3.h3-lg 清楚臨時居住, 永久居住 & 公民法律分析
                         //  Text 
                         p.
-                          每個移民項目Worlgo移民服務幫你做和家人做30分鐘免費的評估.
+                          Worlgo移民服務會幫你和家人提供30分鐘免費的評估.
                           
                         //  Small Title 
                         h5.h5-md 技術/商業/投資移民
@@ -1458,7 +1488,7 @@ html(lang='en')
       //-             Fringilla risus luctus mauris auctor purus euismod pretium purus at pretium ligula rutrum viverra tortor sapien sodales quaerat sodales sapien blandit dolores and aliquam
                   
       //-           //  Small Title 
-      //-           h5.h5-lg 350+ Universities in 17 Countries:
+      //-           h5.h5-lg 350+ Universities in 17 國家：
       //-           //  Flags list 
       //-           ul.flags-list
       //-             li
@@ -1846,8 +1876,8 @@ html(lang='en')
                 //  Title 
                 h5.h5-md 香港島
                 //  Address 
-                p FLT C/L14 Max Share Centre, 373 Kings Rd, 
-                p Northpoint, HK
+                p 銅鑼灣蜆殼街9-23號 
+                p 秀明中心 (Seabright Plaza) 8樓8A室
                 //  Phone 
                 p.mt-20 Phone: +852 5222 4769
                 //  Email 

@@ -152,7 +152,9 @@ app.get("/visa-list-1", (req, res) => {
 app.get("/privacy", (req, res) => {
   res.render("privacy", {title: "Privacy Policy" });
 });
-
+app.get("/OSHC", (req, res) => {
+  res.render("discount_insurance_details", {title: "Discount Insurance OSHC" });
+});
 app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "Auth0" } });
 });
