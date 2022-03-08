@@ -306,7 +306,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/SZEflIVnhH8'				
+							src: 'https://www.youtube.com/embed/TqG8oO2bbOI'				
 								}
 							}
 						}		  		  
@@ -323,7 +323,7 @@
 					patterns: {
 						youtube: {			   
 							index: 'youtube.com',
-							src: 'https://www.youtube.com/embed/6A-Gm1PB_xA'				
+							src: 'https://www.youtube.com/embed/kc5zvBWuyQ8'				
 								}
 							}
 						}		  		  
