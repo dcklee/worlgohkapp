@@ -5,44 +5,46 @@ html(lang='en')
     //-       tinymce.init({
     //-       selector: '#wsmwnutxt'
     //-     });
+
     body
-     script.
-      (function () {
-      var options = {
-      whatsapp: "+85259370163", // WhatsApp number
-      telegram: "+85259370163", // Telegram bot username
-      email: "info@worlgo.com", // Email
-      call: "+85252224769", // Call phone number
-      company_logo_url: "//storage.getbutton.io/widget/4d/4d5f/4d5fa1b3e791721c32a055223749fd64/logo.jpg", // URL of company logo (png, jpg, gif)
-      greeting_message: "你好，要慳更多保險費，請致電我們。", // Text of greeting message
-      call_to_action: "致電我們", // Call to action
-      button_color: "#FF6550", // Color of button
-      position: "right", // Position may be 'right' or 'left'
-      order: "whatsapp,telegram,call,email", // Order of buttons
-      pre_filled_message: "Canada SUV", // WhatsApp pre-filled message
-      ga: true, // Google Analytics enabled
-      branding: false, // Show branding string
-      mobile: true, // Mobile version enabled
-      desktop: true, // Desktop version enabled
-      greeting: true, // Greeting message enabled
-      shift_vertical: 100, // Vertical position, px
-      shift_horizontal: 0, // Horizontal position, px
-      domain: "worlgo.com", // site domain
-      key: "CqDBJN49QHyl3Ekye-O78g", // pro-widget key
-      };
-      var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-      s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-      var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-      })();
-    <!-- /GetButton.io widget -->
+      <!-- GetButton.io widget -->
+      script.
+        (function () {
+            var options = {
+                whatsapp: "+85259370163", // WhatsApp number
+                telegram: "+85259370163", // Telegram bot username
+                email: "info@worlgo.com", // Email
+                call: "+85252224769", // Call phone number
+                company_logo_url: "//storage.getbutton.io/widget/4d/4d5f/4d5fa1b3e791721c32a055223749fd64/logo.jpg", // URL of company logo (png, jpg, gif)
+                greeting_message: "你好，要慳更多保險費，請致電我們。", // Text of greeting message
+                call_to_action: "致電我們", // Call to action
+                button_color: "#FF6550", // Color of button
+                position: "right", // Position may be 'right' or 'left'
+                order: "whatsapp,telegram,call,email", // Order of buttons
+                pre_filled_message: "OHSC", // WhatsApp pre-filled message
+                ga: true, // Google Analytics enabled
+                branding: false, // Show branding string
+                mobile: true, // Mobile version enabled
+                desktop: true, // Desktop version enabled
+                greeting: true, // Greeting message enabled
+                shift_vertical: 100, // Vertical position, px
+                shift_horizontal: 0, // Horizontal position, px
+                domain: "worlgo.com", // site domain
+                key: "CqDBJN49QHyl3Ekye-O78g", // pro-widget key
+            };
+            var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+            var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+            s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+            var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+      <!-- /GetButton.io widget -->
+
       //  Global site tag (gtag.js) - Google Analytics
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-158216926-1")
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'UA-158216926-1');
     | ﻿
 
@@ -111,7 +113,7 @@ html(lang='en')
             a#wsnavtoggle.wsanimated-arrow
               span
             span.smllogo
-              img(src='images/Worlgo logo - brown & orange.png' width='200' height='78' alt='mobile-logo')
+              img(src='images/Worlgo logo - brown & orange.png' width='200' height='50' alt='mobile-logo')
             a.callusbtn(href='tel:123456789')
               i.fas.fa-phone
           //  HEADER STRIP 
@@ -201,7 +203,7 @@ html(lang='en')
                             h3.title 推薦項目:
                             //  Image 
                             .fluid-width-video-wrapper.mb-15
-                              img(src='images/blog/summit.jpg' alt='featured-projects')
+                              img(src='images/blog/summit.jpg' alt='GTI')
                             //  Text 
                             h5.h5-md
                               a(href='visa-details') 858 環球專才移民計劃
@@ -259,19 +261,19 @@ html(lang='en')
         			============================================= 
       .inner-page-wrapper
         //
-           VISA DETAILS PAGE HERO
+           COUNTRY DETAIL PAGE HERO
           				============================================= 
-        section#visa-details-page.page-hero-section.division
+        section#australia-page.page-hero-section.division
           .container
             .row
               //  PAGE HERO TEXT 
               .col-md-7
                 .hero-txt.white-color
-                  h2.h2-xs 加拿大SUV創業移民
+                  h2.h2-xs 澳洲
               //  END PAGE HERO TEXT 
             //  End row 
           //  End container 
-        //  END VISA DETAILS PAGE HERO 
+        //  END COUNTRY DETAIL PAGE HERO 
         //
            BREADCRUMB
           				============================================= 
@@ -284,8 +286,8 @@ html(lang='en')
                     li.breadcrumb-item
                       a(href='/') 主頁面
                     li.breadcrumb-item
-                      a(href='visa-list-2') 簽證類別
-                    li.breadcrumb-item.active(aria-current='page') 愛爾蘭投資移民-翡翠基金
+                      a(href='country-list') 國家名單
+                    li.breadcrumb-item.active(aria-current='page') 澳洲
             //  End row 
           //  End container 
         //  END BREADCRUMB 
@@ -298,74 +300,89 @@ html(lang='en')
               //  ABOUT TEXT 
               .col-lg-8
                 .about-9-txt.mb-40.pr-15
+                  //  Image 
+                  .about-9-img.mb-40
+                    img.img-fluid(src='images/image-10.jpg' alt='about-image')
                   //  Title 
-                  h3.h3-md 多倫多孵化器項目
-                   
+                  h3.h3-md 升學. 工作. 移民澳洲
                   //  Text 
                   p.
+                    
+                    
+                  //  List 
+                  ul.txt-list
+                    li
+                      span 全名:
+                      |  澳大利亞
+                    li
+                      span 人口:
+                      |  2千1百萬 (聯合國, 2009)
+                    li
+                      span 首都:
+                      |  堪培拉
+                    li
+                      span 最大城市:
+                      |  悉尼
+                    li
+                      span 土地面積:
+                      |  7.7 million sq km (2.9 million sq miles)
+                    li
+                      span 語言:
+                      |  英文
+                    li
+                      span 宗教:
+                      |  基督教
+                  //  Small Title 
+                  h5.h5-md.mt-25 主要城市:
+                  p Adelaide, Brisbane, Darwin, Hobart, Melbourne, Sydney, Perth
+                  //  Small Title 
+                  h5.h5-md.mt-25 氣候:
+                  //  Text 
+                  p.
+                    
+                    
                   //  Medium Title 
-                  h4.h4-xs.mt-30 基本要求:
+                  h4.h4-xs.mt-30 其他信息:
+                  //  Text 
+                  p.
+                    
+                    
+                  //  Text 
+                  p.
+                    
+                    
+                  //  Small Title 
+                  h5.h5-md.mt-25 大學:
+                  .row
+                    //  List 
+                    .col-lg-6
+                      ul.txt-list.list-column
+                        li UNSW
+                        li Adelaide College Of Technology
+                        li Central Queensland University
+                        li Edith Cowan University
+                        li RMIT
+                        li Australian Nationwide College
+                    //  List 
+                    .col-lg-6
+                      ul.txt-list
+                        li Cambridge College International
+                        li Brisbane College of Australia
+                        li Perth Institute of business & Tech
+                        li New England Institute
+                        li Northern Sydney Institute
+                        li Western Sydney Institute
+                  //  Small Title 
+                  h5.h5-md.mt-25 Benefits:
+                  //  Text 
+                  p.
+                    
                     
                   //  List 
                   ul.txt-list
-                    li 申請人必須證明他們是創新的移民企業家，他們將通過獲得指定組織的承諾證書來刺激經濟增長，才有資格獲得加拿大啟動簽證
-                    li.
-                      申請人必須持有該業務至少10%的有表決權股份，並與指定機構一起持有超過50%的有表決權股份
-                    li 一旦在加拿大境內成立，申請人必須經營和管理企業
-                    li 申請人必須在英語或法語的加拿大語言基準測試中至少達到 5 級，包括口語、閱讀、聽力和寫作
-                    li 申請人必須證明他有足夠的資金在抵達加拿大後養活自己和任何受撫養人
-                    li 申請人及家屬必須身體健康，無犯罪記錄
-
-                  //  Text  
-                  p.
-                  //  Small Title 
-                  h5.h5-md.mt-25 項目優勢:
-                  //list
-                  ul.txt-list
-                    li.
-                      成功申請者的永久居留權
-                    li 允許雙重國籍
-                    li 配偶或同居伴侶
-                    li 沒有配偶或同居伴侶的 22 歲以下兒童
-                    li 無資金來源及資金路徑要求
-                    li 無年齡限制
-                    li 處理時間快
-                    li 經批准可居住、工作、學習
-                    li 經批准獲得優質資助教育
-                    li 經批准使用先進的衛生和福利系統
-                    li 有機會擔保您的親屬到加拿大
-                    li 永久居留 3 年後可以申請加拿大公民身份
-                  //  Text
-                  h3.h3-md
-                  p.
-                  //  Small Title 
-                  h5.h5-md.mt-25 投資要求 （申請人可從下列指定機構之一取得承諾證書）:
-                    
-                  //  List 
-                  ul.txt-list
-                    li 企業孵化器——確認申請人的企業目前正在參與或已被其企業孵化器計劃接受，或
-
-                    li.
-                      天使投資集團——確認其在申請人的業務中投資至少 75,000 加元； 或者
-                    li 風險投資基金——確認它在申請人的業務中投資至少 200,000 加元。
-
-                  p.
-                  //  Small Title 
-                  h5.h5-md.mt-25 辦理手續:
-                    
-                  //  List 
-                  ul.txt-list
-                    li 委任授權代表提交申請
-                    li 提供語言能力證明和其他個人文件
-                    li 獲得天使投資集團、風險投資基金或企業孵化器的承諾證書
-                    li 提交申請表、證明文件和費用
-                    li 典型的處理時間在 12-16 個月內
-                    li 成功申請者將立即獲得加拿大永久居留身份      
-                    
-                  //  Image 
-                  .about-9-img.mt-40.mb-40
-                    img.img-fluid(src='images/image-11.jpg' alt='about-image')
-                    
+                    li 
+                    li 
+                    li 
               //  END ABOUT TEXT 
               //  SIDEBAR 
               aside#sidebar.col-lg-4
@@ -374,7 +391,7 @@ html(lang='en')
                   form.row.request-form.bg-darkblue(name='requestForm')
                     //  Request Form Text 
                     .col-md-12.white-color
-                      h5.h5-lg 免費30分鐘1對1咨詢
+                      h5.h5-lg 免費1對1 30分鐘移民評估
                     //  Request Form Input 
                     #input-name.col-md-12
                       input.form-control.name(type='text' name='name' placeholder='Enter Your Name*' required)
@@ -449,6 +466,95 @@ html(lang='en')
             //  End row 
           //  End container 
         //  END ABOUT-9 
+        //  HORIZONTAL GREY LINE 
+        .section-divider
+          .container
+            .row
+              .grey-border
+        //
+           SERVICES-4
+          				============================================= 
+        section#services-4.wide-60.services-section.division
+          .container
+            //  SECTION TITLE 
+            .row
+              .col-md-12.section-title.center
+                //  Title 
+                h3.h3-lg 澳洲簽證列別:
+                //  Text 
+                p.p-md.
+                  
+                  
+            .row
+              //  SERVICE BOX #1 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='visa-details-03')
+                    //  Icon 
+                    .sbox-4-icon.deepblue-color
+                      span.flaticon-431-bank
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 澳洲188B 250萬投資簽證
+                      p 投資移民2021年7月重啓。如果擔心資產是否符合，請聯係我!們持牌顧問。
+              //  SERVICE BOX #2 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='#')
+                    //  Icon 
+                    .sbox-4-icon.deepblue-color
+                      span.flaticon-033-user-2
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 澳洲讀書移民計劃-香港組別
+                      p 讀兩年書然後輕鬆申請及獲取澳洲PR永久身份的最新澳洲移民計劃。
+              //  SERVICE BOX #3 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='#')
+                    //  Icon 
+                    .sbox-4-icon.deepblue-color
+                      span.flaticon-397-briefcase
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 858 環球專才移民計劃
+                      p 是一個給予主申請人以及其撫養的家庭成員獲得永久居留權的直接快速通道。
+              //  SERVICE BOX #4 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='visa-details-02')
+                    //  Icon 
+                    .sbox-4-icon.deepblue-color
+                      span.flaticon-102-sign
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 澳洲雇主提名擔保移民
+                      p 希望尋找符合澳洲雇主提名擔保的工作崗位？54天可以獲取工作許可。
+              //  SERVICE BOX #5 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='#')
+                    //  Icon 
+                    .sbox-4-icon.deepblue-color
+                      //span.flaticon-285-internet-2
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 
+                      p 
+              //  SERVICE BOX #6 
+              .col-md-6.col-lg-4
+                .sbox-4.icon-sm
+                  a(href='#')
+                    //  Icon 
+                    .sbox-4-icon
+                      //span.flaticon-265-question
+                    //  Text 
+                    .sbox-4-txt
+                      h5.h5-md 
+                      p 
+            //  End row 
+          //  End container 
+        //  END SERVICES-4 
         //
           FOOTER-3
                 ============================================= 

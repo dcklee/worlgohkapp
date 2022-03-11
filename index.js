@@ -155,6 +155,27 @@ app.get("/privacy", (req, res) => {
 app.get("/OSHC", (req, res) => {
   res.render("discount_insurance_details", {title: "Discount Insurance OSHC" });
 });
+app.get("/australia", (req, res) => {
+  res.render("australia", {title: "Australia" });
+});
+app.get("/UK", (req, res) => {
+  res.render("UK", {title: "UK" });
+});
+app.get("/USA", (req, res) => {
+  res.render("USA", {title: "USA" });
+});
+app.get("/ireland", (req, res) => {
+  res.render("ireland", {title: "Ireland" });
+});
+app.get("/newzealand", (req, res) => {
+  res.render("newzealand", {title: "New Zealand" });
+});
+app.get("/canada", (req, res) => {
+  res.render("canada", {title: "Canada" });
+});
+app.get("/portugal", (req, res) => {
+  res.render("portugal", {title: "Portugal" });
+});
 app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "Auth0" } });
 });
