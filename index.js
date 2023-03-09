@@ -4,87 +4,27 @@
  * Required External Modules
  */
 
+const cors = require("cors");
 const express = require("express");
 const path = require("path");
 const nodemailer = require('nodemailer');
 const i18n = require("i18n");
+const { Configuration, OpenAIApi } = require("openai");
+const pug = require("pug");
+
 /**
  * App Variables
  */
 
 const app = express();
-const port = process.env.PORT || "8000";
-
-/**
- *  Google Cloud Storage Definitions
- */
-
-// const {format} = require('util');
-// const Multer = require('multer');
-// const bodyParser = require('body-parser');
-
-// // By default, the client will authenticate using the service account file
-// // specified by the GOOGLE_APPLICATION_CREDENTIALS environment variable and use
-// // the project specified by the GOOGLE_CLOUD_PROJECT environment variable. See
-// // https://github.com/GoogleCloudPlatform/google-cloud-node/blob/master/docs/authentication.md
-// // These environment variables are set automatically on Google App Engine
-// const {Storage} = require('@google-cloud/storage');
-
-// // Instantiate a storage client
-// const storage = new Storage();
-// app.use(bodyParser.json());
-
-// // Multer is required to process file uploads and make them available via
-// // req.files.
-// const multer = Multer({
-//   storage: Multer.memoryStorage(),
-//   limits: {
-//     fileSize: 5 * 1024 * 1024, // no larger than 5mb, you can change as needed.
-//   },
-// });
-
-// // A bucket is a container for objects (files).
-// const bucket = storage.bucket(process.env.GCLOUD_STORAGE_BUCKET);
-
-// // Display a form for uploading files.
-// app.get('/', (req, res) => {
-//   res.render('form.pug');
-// });
-
-// // Process the file upload and upload to Google Cloud Storage.
-// app.post('/upload', multer.single('file'), (req, res, next) => {
-//   if (!req.file) {
-//     res.status(400).send('No file uploaded.');
-//     return;
-//   }
-
-//   // Create a new blob in the bucket and upload the file data.
-//   const blob = bucket.file(req.file.originalname);
-//   const blobStream = blob.createWriteStream();
-
-//   blobStream.on('error', (err) => {
-//     next(err);
-//   });
-
-//   blobStream.on('finish', () => {
-//     // The public URL can be used to directly access the file via HTTP.
-//     const publicUrl = format(
-//       `https://storage.googleapis.com/${bucket.name}/${blob.name}`
-//     );
-//     res.status(200).send(publicUrl);
-//   });
-
-//   blobStream.end(req.file.buffer);
-// });
-
-/**
- *  App Configuration
- */
+const port = process.env.PORT || "5000";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(cors());
 /**
  * Routes Definitions
  */
@@ -146,6 +86,9 @@ app.get("/visa-details-05", (req, res) => {
 app.get("/visa-details-06", (req, res) => {
   res.render("visa-details-06", {title: "Visa Details 06" });
 });
+app.get("/visa-chat", (req, res) => {
+  res.render("visa-chat", {title: "Visa Chat" });
+});
 app.get("/visa-list-1", (req, res) => {
   res.render("visa-list-1", {title: "Visa List" });
 });
@@ -180,18 +123,9 @@ app.get("/user", (req, res) => {
   res.render("user", { title: "Profile", userProfile: { nickname: "Auth0" } });
 });
 
-/**
- * Server Activation
- */
-
-app.listen(port, () => {
-  console.log(`Listening to requests on http://localhost:${port}`);
-});
-
 app.use(express.urlencoded({
   extended: false
 }));
-app.use(express.json());
 
 app.post("/send", (req, res) =>{
   
@@ -241,9 +175,70 @@ app.post("/contact", (req, res) =>{
   console.log(message);
   transport.sendMail(message, function(err, info) {
     if (err) {
-      console.log(err)
+      console.log(err);
     } else {
       console.log(info);
     }
   });
+});
+
+// Set up OpenAI API credentials
+const apiKey = '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';
+const model = 'text-davinci-003';
+const configuration = new Configuration({
+  apiKey: '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',
+});
+// Initialize OpenAI API client
+const openai = new OpenAIApi(configuration);
+
+// Set up middleware to parse form data
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+
+// Set up route to handle form submission
+app.post('/chat-gpt', async (req, res) => {
+  // Get form data
+  const { age, education, children, maritalStatus, country } = req.body;
+
+  // Construct prompt for OpenAI API
+  const prompt = `根据以下信息，为我和家人推荐移民${country}的最佳五個途径，相關費用，簽證費用以及辦理時間。如果有子女，請描述私立跟公立學校的學費。麻煩提供每一個方案的主題當地省市的擔保要求等等：\n
+    年龄：${age}\n
+    最高学历：${education}\n
+    子女人数：${children}\n
+    婚姻状况：${maritalStatus}\n
+    移民國際：${country}\n`;
+
+  // Generate response from OpenAI API
+  
+  const response = await openai.createCompletion({
+    model: model,
+    prompt: prompt,
+    temperature: 0,
+    max_tokens: 1024,
+    top_p: 1.0,
+    frequency_penalty: 0.0,
+    n: 1,
+    presence_penalty: 0.6
+  })
+    .then(response => {
+      // Extract generated text from OpenAI API response
+      const jsondata = response.data;
+      const text = jsondata.choices[0].text;  
+      // Send the raw Openai test response back
+      res.status(200).send({ text });
+      // Send the HTML response to the client
+      //res.send(html);
+    })
+    .catch(error => {
+      console.error(error);
+      res.status(500).send('Internal server error');
+    });
+});
+
+/**
+ * Server Activation
+ */
+
+app.listen(port, () => {
+  console.log(`Listening to requests on http://localhost:${port}`);
 });

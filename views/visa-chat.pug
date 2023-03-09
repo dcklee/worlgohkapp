@@ -6,6 +6,52 @@ html(lang='en')
     //-       selector: '#wsmwnutxt'
     //-     });
     body
+      <!-- Google Tag Manager -->
+    script. 
+      (function(w,d,s,l,i) {
+        w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'
+        });
+        var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-PVXT75J');
+        
+        <!-- End Google Tag Manager -->
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVXT75J"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+    script.
+        (function () {
+        var options = {
+        whatsapp: "+85259370163", // WhatsApp number
+        telegram: "+85259370163", // Telegram bot username
+        email: "info@worlgo.com", // Email
+        call: "+85231068789", // Call phone number
+        company_logo_url: "//storage.getbutton.io/widget/4d/4d5f/4d5fa1b3e791721c32a055223749fd64/logo.jpg", // URL of company logo (png, jpg, gif)
+        greeting_message: "你好，請致電我們。", // Text of greeting message
+        call_to_action: "致電我們", // Call to action
+        button_color: "#FF6550", // Color of button
+        position: "right", // Position may be 'right' or 'left'
+        order: "whatsapp,telegram,call,email", // Order of buttons
+        pre_filled_message: "General", // WhatsApp pre-filled message
+        ga: true, // Google Analytics enabled
+        branding: false, // Show branding string
+        mobile: true, // Mobile version enabled
+        desktop: true, // Desktop version enabled
+        greeting: true, // Greeting message enabled
+        shift_vertical: 100, // Vertical position, px
+        shift_horizontal: 0, // Horizontal position, px
+        domain: "worlgo.com", // site domain
+        key: "CqDBJN49QHyl3Ekye-O78g", // pro-widget key
+        };
+        var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+        })();
+      <!-- /GetButton.io widget -->
       //  Global site tag (gtag.js) - Google Analytics
     script(async src="https://www.googletagmanager.com/gtag/js?id=UA-158216926-1")
     script.
@@ -81,7 +127,7 @@ html(lang='en')
             a#wsnavtoggle.wsanimated-arrow
               span
             span.smllogo
-              img(src='images/Worlgo logo - brown & orange.png' width='200' height='78' alt='mobile-logo')
+              img(src='images/Worlgo logo - brown & orange.png' width='200' height='50' alt='mobile-logo')
             a.callusbtn(href='tel:123456789')
               i.fas.fa-phone
           //  HEADER STRIP 
@@ -95,7 +141,7 @@ html(lang='en')
                     | 尖沙咀廣東道28號力寶太陽廣場（Lippo Sun Plaza）12樓1203室 
               //  Contacts 
               .headertopright.header-contacts
-                a.callusbtn.txt-400(href='tel:+852 31068789')
+                a.callusbtn.txt-400(href='tel:+852 3106 8789')
                   i.fas.fa-phone
                   | 
                 a.callusbtn.b-right.txt-400(href='tel:+85231068789')  +852 31068789
@@ -119,11 +165,11 @@ html(lang='en')
                 ul.wsmenu-list
                   //  DROPDOWN MENU 
                   li(aria-haspopup='true')
-                    a(href='#')
+                    a(href='/')
                       | 主頁 
                   //  PAGES 
                   li(aria-haspopup='true')
-                    a(href='#')
+                    a(href='/contacts-1')
                       | 關於我們
                       span.wsarrow
                     .wsmegamenu.clearfix
@@ -144,7 +190,7 @@ html(lang='en')
                   //  END PAGES 
                   //  MEGAMENU 
                   li(aria-haspopup='true')
-                    a(href='#')
+                    a(href='/OSHC')
                       |  服務
                       span.wsarrow
                     .wsmegamenu.clearfix
@@ -156,9 +202,9 @@ html(lang='en')
                             h3.title 最新服務
                             ul.link-list
                               li
-                                a(href='visa-details') 858 環球專才移民計劃
+                                a(href='visa-details') 澳洲 858 GTI環球專才民計劃
                               li
-                                a(href='visa-details-03') 188 商業/投資/SIV 500萬
+                                a(href='visa-details-03') 188 生意/投資/SIV
                               li
                                 a(href='/OSHC') 海外留學生醫療保險
                               li
@@ -238,7 +284,7 @@ html(lang='en')
               //  PAGE HERO TEXT 
               .col-md-7
                 .hero-txt.white-color
-                  h2.h2-xs COVID-19 Pandemic Event Visa
+                  h2.h2-xs 英國技術移民
               //  END PAGE HERO TEXT 
             //  End row 
           //  End container 
@@ -256,7 +302,8 @@ html(lang='en')
                       a(href='/') 主頁面
                     li.breadcrumb-item
                       a(href='visa-list-2') 簽證類別
-                    li.breadcrumb-item.active(aria-current='page') Australian Subclass 408 "Coronavirus" Visa
+                    li.breadcrumb-item.active(aria-current='page') 移民稅務任你問
+                   
             //  End row 
           //  End container 
         //  END BREADCRUMB 
@@ -270,75 +317,57 @@ html(lang='en')
               .col-lg-8
                 .about-9-txt.mb-40.pr-15
                   //  Title 
-                  h3.h3-md COVID-19 Pandemic Event Visa
+                  h3.h3-md 移民稅務任你問
                    
                   //  Text 
-                  p.
-                    Who is eligible to apply for the COVID-19 Australian Government Endorsed Event (AGEE) stream of the Temporary Activity (subclass 408) visa?
-                  p.
-                    The COVID-19 Pandemic event visa is available to people who are:
+                  p 您的移民方案： <div id="output"></div>
+                    
                   //  List 
-                  ul.txt-list
-                    li in Australia
-                    li.
-                      are unable to depart Australia due to COVID-19
-                      
-                    li have 28 days or less remaining on their current visa or where their last temporary visa has expired less than 28 days ago
-                    li are not eligible for any other visa based on their intended activities or
-                    li have evidence from their employer that they have ongoing work in a critical sector and that an Australian Citizen or Permanent Resident cannot fill the position.
+
                   //  Text
-                  h5.h5-md.mt-25 Working in critical sectors
+                    
                   //list
-                  ul.txt-list
-                    li.
-                      Working holiday makers working in critical sectors such as agriculture, food processing, health care, aged care, disability care and childcare who are not eligible for any other visa and are unable to return to their home country can apply for the COVID-19 Pandemic event visa.
-                    li Seasonal Worker Programme visa holders with visas due to expire within 28 days are also able to apply for the COVID-19 Pandemic event visa.
-                    li Other temporary visa holders whose visas are about to expire, have no other visa options, are unable to return to their home country and who are working in critical sectors may apply for the COVID-19 Pandemic event visa. Evidence of this work will need to be submitted with the application.
+
                   //  Image 
                   .about-9-img.mt-40.mb-40
                     img.img-fluid(src='images/image-10.jpg' alt='about-image')
                   //  Text 
-                  h5.h5-md.mt-25 Visa of last resort
-                  p.
-                    Other temporary visa holders may apply for the COVID-19 Pandemic event visa only where there is no other visa option and it is not possible to leave Australia due to the COVID-19 pandemic. This will allow you to remain lawfully in Australia until it is safe and practical for you to return to your home country.
+
                   //  Small Title 
-                  h5.h5-md.mt-25 Important Notes
+                  h5.h5-md.mt-25 
                   //  List 
                   ul.txt-list
-                    li You should only apply for this visa is you are unable to depart Australia, your temporary visa expires in less than 28 days (or did not expire more than 28 days ago) and you have no other visa options available to you.
-                    li If you are not working in a critical sector, you can only apply for the COVID-19 Pandemic event visa if you have no other visa options available to you.
-                    li People who are working in critical sectors will be given permission to work on their COVID-19 Pandemic event visa. All other people holding this visa will not have permission to work.
                     
               //  END ABOUT TEXT 
               //  SIDEBAR 
               aside#sidebar.col-lg-4
                 //  SIDEBAR FORM 
                 #request-form.mb-40
-                  form.row.request-form.bg-darkblue(name='requestForm')
+                  form.row.request-form.bg-darkblue(name='chatgpt-form')
                     //  Request Form Text 
                     .col-md-12.white-color
-                      h5.h5-lg Free Consultation
+                      h5.h5-lg 移民稅務任你問
                     //  Request Form Input 
                     #input-name.col-md-12
-                      input.form-control.name(type='text' name='name' placeholder='Enter Your Name*' required)
+                      input.form-control.age(type='text' name='age' placeholder='年齡*' required)
                     //  Request Form Input 
                     #input-email.col-md-12
-                      input.form-control.email(type='text' name='email' placeholder='Enter Your Email*' required)
+                      input.form-control.education(type='text' name='education' placeholder='最高學歷*' required)
                     //  Request Form Input 
                     #input-phone.col-md-12
-                      input.form-control.phone(type='tel' name='phone' placeholder='Enter Your Phone Number*' required)
+                      input.form-control.children(type='text' name='children' placeholder='子女人數*' required)
                     //  Request Form Select 
-                    #input-visa.col-md-12.input-visa
-                      select#inlineFormCustomSelect1.custom-select.visa(name='visa' required)
-                        option(value) Select Visa
-                        option 858 環球專才移民計劃
-                        option 188 商業/投資/SIV 500萬
-                        option 新西蘭投資移民
-                        option 英國技術移民
+                    #input-visa.col-md-12.input-maritalStatus
+                      select#inlineFormCustomSelect1.custom-select.maritalStatus(name='maritalStatus' required)
+                        option(value) 婚姻狀態
+                        option 已婚有子女
+                        option 已婚無子女
+                        option 離婚
+                        option 丧偶
                     //  Request Form Select 
                     #input-country.col-md-12.input-country
                       select#inlineFormCustomSelect2.custom-select.country(name='country' required)
-                        option(value) Visa For
+                        option(value) 移民目的地
                         option 澳洲
                         option 加拿大
                         option UK
@@ -359,17 +388,17 @@ html(lang='en')
                   //  List 
                   ul.blog-category-list.clearfix
                     li
-                      a.txt-400(href='#')
+                      a.txt-400(href='visa-details-04')
                         i.fas.fa-genderless
-                        |  愛爾蘭投資移民
+                        | 愛爾蘭投資移民
                     li
                       a.txt-400(href='OSHC')
                         i.fas.fa-genderless
                         |  海外留學生醫療保險
                     li
-                      a.txt-400(href='#')
+                      a.txt-400(href='visa-details-02')
                         i.fas.fa-genderless
-                        |  Australia 491 Skilled Visa - 2 Months Express Visa Application
+                        |  澳洲雇主（457、482至PR簽證)-香港組別
                 //  SIDEBAR COUNTRIES 
                 .sidebar-countries.sidebar-div.mb-50
                   //  Title 
@@ -443,13 +472,13 @@ html(lang='en')
                   //  Footer Links 
                   ul.foo-links.clearfix
                     li
-                      a(href='#') 澳洲投資移民簽證
+                      a(href='visa-details-03') 澳洲投資移民簽證
                     li
-                      a(href='#') 澳洲工作簽
+                      a(href='visa-details-02') 澳洲工作簽
                     li
-                      a(href='#') 加拿大工作簽
+                      a(href='visa-details-05') 加拿大工作簽
                     li
-                      a(href='#') 英國工作簽
+                      a(href='visa-details-01') 英國工作簽
                     li
                       a(href='#') Visa Statistics
               //  FOOTER NEWSLETTER FORM 
@@ -482,7 +511,7 @@ html(lang='en')
                     | . All Rights 
                     a(href='https://www.worlgo.com/' title='Worlgo Migration') Reserved
                   p.p-sm
-                    a(href='#') Privacy Policy
+                    a(href='privacy') Privacy Policy
                   p.p-sm
                     a(href='#') Terms & Conditions
                   p.p-sm
@@ -513,6 +542,7 @@ html(lang='en')
     script(src='js/comment-form.js')
     script(src='js/jquery.ajaxchimp.min.js')
     script(src='js/jquery.validate.min.js')
+    script(src='js/chatgpt-form.js')
     //  Custom Script 
     script(src='js/custom.js')
     //  HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. 
