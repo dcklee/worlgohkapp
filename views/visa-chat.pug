@@ -350,9 +350,15 @@ html(lang='en')
                     //  Request Form Input 
                     #input-name.col-md-12
                       input.form-control.age(type='text' name='age' placeholder='年齡*' required)
-                    //  Request Form Input 
-                    #input-email.col-md-12
-                      input.form-control.education(type='text' name='education' placeholder='最高學歷*' required)
+                    //  Request Form Select 
+                    #input-visa.col-md-12.input-education
+                      select#inlineFormCustomSelect1.custom-select.education(name='education' required)
+                        option(value) 最高學歷
+                        option 中學
+                        option 專科
+                        option 本科
+                        option 碩士
+                        option 博士
                     //  Request Form Input 
                     #input-phone.col-md-12
                       input.form-control.children(type='text' name='children' placeholder='子女人數*' required)
@@ -368,11 +374,24 @@ html(lang='en')
                     #input-country.col-md-12.input-country
                       select#inlineFormCustomSelect2.custom-select.country(name='country' required)
                         option(value) 移民目的地
-                        option 澳洲
-                        option 加拿大
-                        option UK
-                        option 台灣
+                        option 澳洲悉尼
+                        option 澳洲墨爾本
+                        option 澳洲珀斯
+                        option 澳洲布里斯班
+                        option 加拿大多倫多
+                        option 加拿大溫哥華
+                        option 加拿大曼尼托巴
+                        option 英國
+                        option 英國曼島
                         option 葡萄牙
+                        option 美國洛杉磯
+                        option 美國洛紐約
+                        option 香港
+                        option 新加坡
+                        option 柬埔寨
+                        option 新西蘭
+                    #input-question.col-md-12
+                      input.form-control.question(type='text' name='question' placeholder='其它問題*' required)
                     //  Request Form Button 
                     .col-md-12.form-btn
                       button.btn.btn-primary.tra-black-hover.submit(type='submit') 請聯絡我!

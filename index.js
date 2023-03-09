@@ -17,7 +17,7 @@ const pug = require("pug");
  */
 
 const app = express();
-const port = process.env.PORT || "5000";
+const port = process.env.PORT || "8000";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
@@ -134,7 +134,7 @@ app.post("/send", (req, res) =>{
     host: "smtp.gmail.com",
     auth: {
         user: "info@worlgo.com",
-        pass: ""
+        pass: "skgmzrgrlkevolgt"
     }
   });
 
@@ -162,7 +162,7 @@ app.post("/contact", (req, res) =>{
     host: "smtp.gmail.com",
     auth: {
         user: "info@worlgo.com",
-        pass: ""
+        pass: "skgmzrgrlkevolgt"
     }
   });
 
@@ -183,10 +183,10 @@ app.post("/contact", (req, res) =>{
 });
 
 // Set up OpenAI API credentials
-const apiKey = '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';
+//const apiKey = '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';
 const model = 'text-davinci-003';
 const configuration = new Configuration({
-  apiKey: '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',
+  apiKey: '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',
 });
 // Initialize OpenAI API client
 const openai = new OpenAIApi(configuration);
@@ -198,25 +198,26 @@ app.use(express.json());
 // Set up route to handle form submission
 app.post('/chat-gpt', async (req, res) => {
   // Get form data
-  const { age, education, children, maritalStatus, country } = req.body;
+  const { age, education, children, maritalStatus, country, question } = req.body;
 
   // Construct prompt for OpenAI API
-  const prompt = `根据以下信息，为我和家人推荐移民${country}的最佳五個途径，相關費用，簽證費用以及辦理時間。如果有子女，請描述私立跟公立學校的學費。麻煩提供每一個方案的主題當地省市的擔保要求等等：\n
+  const prompt = `根据以下信息，为我和家人推荐移民${country}的最佳五個途径，相關費用，簽證費用以及辦理時間。如果有子女，請描述私立跟公立學校的學費。請在提供方案時，注意每一個因素如何給當地的移民法限制。如果方案不符合，請告訴我們。最後，如果方案需要投資款，請詳細描述投資移民的金額：\n
     年龄：${age}\n
     最高学历：${education}\n
     子女人数：${children}\n
     婚姻状况：${maritalStatus}\n
-    移民國際：${country}\n`;
+    目標移民國家和省份：${country}\n
+    客人咨詢問題：${question}\n`;
 
   // Generate response from OpenAI API
   
   const response = await openai.createCompletion({
     model: model,
     prompt: prompt,
-    temperature: 0,
-    max_tokens: 1024,
-    top_p: 1.0,
-    frequency_penalty: 0.0,
+    temperature: 0.5,
+    max_tokens: 6000,
+    top_p: 0.6,
+    frequency_penalty: 0.4,
     n: 1,
     presence_penalty: 0.6
   })
@@ -226,8 +227,7 @@ app.post('/chat-gpt', async (req, res) => {
       const text = jsondata.choices[0].text;  
       // Send the raw Openai test response back
       res.status(200).send({ text });
-      // Send the HTML response to the client
-      //res.send(html);
+      console.log(text);
     })
     .catch(error => {
       console.error(error);

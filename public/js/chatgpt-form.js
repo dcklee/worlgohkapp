@@ -9,6 +9,7 @@ $(document).ready(function() {
         var children = $(".children");
         var maritalStatus = $(".maritalStatus");
         var country = $(".country");
+        var question = $(".question");
         var flag = false;
         //console.log(age.val(), education.val(), children.val(), maritalStatus.val(), country.val());
         if (age.val() == "") {
@@ -47,16 +48,24 @@ $(document).ready(function() {
         } else {
             country.closest(".form-control").removeClass("error").addClass("success");
             flag = true;
+        } if (question.val() == "") {
+            question.closest(".form-control").addClass("error");
+            question.focus();
+            flag = false;
+            return false;
+        } else {
+            question.closest(".form-control").removeClass("error").addClass("success");
         }
         var age=age.val();
         var education=education.val();
         var children=children.val();
         var maritalStatus=maritalStatus.val()
         var country=country.val()
+        var question=question.val()
         $(".loading").fadeIn("slow").html("Loading...");
         $.ajax({
             type: "POST",
-            data: {age: age, education: education, children: children, maritalStatus: maritalStatus, country: country},
+            data: {age: age, education: education, children: children, maritalStatus: maritalStatus, country: country, question: question},
             url: "/chat-gpt",
             cache: false,
             dataType: 'json',
